@@ -4,6 +4,8 @@ import { Place, Route } from 'src/core/ga-best-route-service/route.model';
 import { StatisticEntity } from 'src/core/models/statistic.model';
 import { GABestRouteService } from 'src/core/ga-best-route-service/gabestroute.service';
 import { LocationService } from 'src/core/location.service';
+import { User } from 'src/core/models/auth/user.model';
+import { AccountService } from 'src/core/services/auth/account.service';
 
 @Component({
   selector: 'app-map',
@@ -17,12 +19,18 @@ export class MapComponent implements OnInit {
     public overlays: any[];
     public route: Route;
     public statisticEntities: StatisticEntity[] = [];
-  
+
     private calculationCount = 0;
     private tempPlaces = []
 
+    public visibleSideBar = false;
+    public currentUser: User;
+
+    public places: Place[] = [];
+
   constructor(
     private locationService: LocationService,
+    private accountService: AccountService,
     private gaBestRouteCalculation: GABestRouteService) { }
 
   public ngOnInit(): void {
@@ -31,6 +39,7 @@ export class MapComponent implements OnInit {
       };
 
     this.initializeLocation();
+    this.initializeUser();
 
     this.overlays = [];
   }
@@ -50,6 +59,13 @@ export class MapComponent implements OnInit {
 
       this.mapInitialized = true;
     });
+  }
+
+  private initializeUser(): void {
+    this.accountService.getUser()
+      .subscribe(result => {
+        this.currentUser = result;
+      })
   }
 
   public calculateRoute(): void {
@@ -136,14 +152,19 @@ export class MapComponent implements OnInit {
     this.tempPlaces.push(
       { x: event.latLng.lat(), y: event.latLng.lng(), id: "001" } as Place,
     );
+
+    this.places.push(
+      { x: event.latLng.lat(), y:  event.latLng.lng(), id: this.places.length.toString() } as Place
+    )
   }
 
   public handleOverlayClick(event): void {
     const index: number = this.tempPlaces.findIndex(
       (element) => element.x == event.overlay.position.lat() && element.y == event.overlay.position.lng());
-    
+
     if (index !== -1) {
       this.tempPlaces.splice(index, 1);
+      this.places.slice(index, 1);
     }
 
     this.resetRoute();
@@ -151,6 +172,7 @@ export class MapComponent implements OnInit {
 
   public resetPlaces(): void {
     this.tempPlaces = [];
+    this.places = [];
 
     this.resetRoute();
   }

@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 
+import { SidebarModule } from 'primeng/sidebar';
+import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { GMapModule } from 'primeng/gmap';
 import { AccordionModule } from 'primeng/accordion';
@@ -21,7 +22,9 @@ import { MapRoutingModule } from './map-routing.module';
     ReactiveFormsModule,
     AccordionModule,
     GMapModule,
-    TableModule
+    TableModule,
+    SidebarModule,
+    ButtonModule
   ],
   providers: []
 })

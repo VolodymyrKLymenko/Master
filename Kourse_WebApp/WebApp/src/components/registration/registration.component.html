@@ -1,0 +1,32 @@
+<form class="auth-form"
+      [formGroup]="registrationForm"
+      (ngSubmit)="onSubmit()">
+  <div *ngIf="validationMsg" class="validation-error">
+    <span class="validation-text">{{validationMsg}}</span>
+  </div>
+  <div class="form-label-group">
+    <label type="email">
+      Email:
+      <input formControlName="userEmail"
+             class="form-control"
+             type="text" >
+    </label>
+  </div>
+  <div class="form-label-group">
+    <label>
+      Name:
+      <input formControlName="userName"
+             class="form-control"
+             type="text" >
+    </label>
+  </div>
+  <div class="form-label-group">
+    <label>
+      Password:
+      <input formControlName="userPassword"
+             class="form-control"
+             type="password" >
+    </label>
+  </div>
+  <button type="submit" class="btn form-submit" [disabled]="!registrationForm.valid">Submit</button>
+</form>

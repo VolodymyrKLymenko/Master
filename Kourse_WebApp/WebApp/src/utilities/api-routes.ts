@@ -4,5 +4,5 @@ export const ApiRoutes = {
     authenticate: `${environment.baseUrl}/accounts/login`,
     refreshToken: ``,
     resetPassword: ``,
-    userProfile: `${environment.baseUrl}/users`
+    userProfile: `${environment.baseUrl}/accounts/users`
 };

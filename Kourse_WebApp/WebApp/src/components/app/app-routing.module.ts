@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from 'src/core/guards/auth.guard';
 import { AuthModule } from '../auth/auth.module';
 import { MapModule } from '../map/map.module';
+import { RegistrationModule } from '../registration/registration.module';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => AuthModule
+  },
+  {
+    path: 'registration',
+    loadChildren: () => RegistrationModule
   },
   {
     path: 'profile',

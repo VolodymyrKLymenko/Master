@@ -1,5 +1,9 @@
+<p-sidebar [(visible)]="visibleSideBar" [baseZIndex]="10000">
+  <h1 style="font-weight:normal">{{currentUser.login}}</h1>
+  <p-button type="button" (click)="visibleSideBar = false" label="Save" styleClass="p-button-success"></p-button>
+  <p-button type="button" (click)="visibleSideBar = false" label="Cancel" styleClass="p-button-secondary"></p-button>
+</p-sidebar>
 <div class="container">
-    <h1>Genetic algorithm Traveling salesman problem solver</h1>
     <div>
       <p-gmap #gmap *ngIf="mapInitialized"
             [options]="options"
@@ -10,21 +14,21 @@
       </p-gmap>
     </div>
     <div class="statistic-tab row d-flex justify-content-center">
-      <p-table #dt mdbTable [value]="statisticEntities" styleClass="ui-table-customers table table-striped table-responsive-md btn-table">
+      <p-table #dt mdbTable [value]="places" styleClass="ui-table-customers table table-striped table-responsive-md btn-table">
           <ng-template pTemplate="header">
               <tr>
-                  <th>Count</th>
-                  <th>Distance</th>
-                  <th>Duration of calculation (ms)</th>
-                  <th>Generations count</th>
+                  <th>Id</th>
+                  <th>Longitude</th>
+                  <th>Latitude</th>
+                  <th>Details</th>
               </tr>
           </ng-template>
           <ng-template pTemplate="body" let-entity>
               <tr class="ui-selectable-row">
                   <td>{{entity.id}}</td>
-                  <td>{{entity.distance | number:'.1-2'}} km</td>
-                  <td>{{entity.durationInMilliseconds}}</td>
-                  <td>{{entity.generationsCount}}</td>
+                  <td>{{entity.x}} km</td>
+                  <td>{{entity.y}}</td>
+                  <td>TODO: Details</td>
               </tr>
           </ng-template>
       </p-table>
@@ -40,5 +44,8 @@
               (click)="resetPlaces()">
         Reset
       </button>
+    </div>
+    <div *ngIf="!visibleSideBar" class="sidebar-buttons-container">
+      <p-button type="button" (click)="visibleSideBar = true" icon="pi pi-arrow-right"></p-button>
     </div>
 </div>

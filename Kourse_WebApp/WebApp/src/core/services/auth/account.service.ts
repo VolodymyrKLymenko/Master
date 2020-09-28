@@ -12,6 +12,7 @@ import { LoginModel } from 'src/core/models/auth/login.model';
 import { LoginResultModel } from 'src/core/models/auth/login-result.model';
 import { RefreshTokenModel } from 'src/core/models/auth/refresh-token.model';
 import { ResetPasswordModel } from 'src/core/models/auth/reset-password.model';
+import { RegistrationModel } from 'src/core/models/auth/registration.model';
 
 @Injectable({
   providedIn: 'root'
@@ -57,12 +58,19 @@ export class AccountService {
       this.tokenService.setRefreshToken(loginResult.refreshToken);
 
       const user = {
-        UserRole: decode(token).role,
-        Id: loginResult.userId,
-        UserName: loginResult.userName
+        id: loginResult.userId,
+        login: loginResult.userName
       } as User;
       this.user = user;
       this.userService.setUserInLocalStorage(user);
     }
+  }
+
+  public registerUser(model: RegistrationModel): Observable<any> {
+    return this.http.post<any>(`${ApiRoutes.userProfile}`, model);
+  }
+
+  public getUser(): Observable<User> {
+    return this.http.get<User>(`${ApiRoutes.userProfile}`);
   }
 }
