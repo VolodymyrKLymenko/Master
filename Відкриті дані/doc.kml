@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>SRTM4.1</name>
+	<open>1</open>
+	<Snippet maxLines="2">SRTM based Topographic data V4.1.</Snippet>
+	<description><![CDATA[<h1>Processed SRTM 90m Digital Elevation Data (DEM) Version 4.1</h1></P>
+
+<P><I>Welcome to TOPOVIEW : the Google Earth interface for the SRTM data.</I><BR/>
+If you tick 'Elevation' under 'Temporary places',
+each of the grids that you see represents a 5 by 5 degree tile
+and contains a placemark which links to approx. 90m resolution
+digital elevation data. The data originate in the NASA Shuttle
+Radar Topographic Mission <A HREF="http://srtm.usgs.gov/">(SRTM)
+</A>data held at the <A HREF="http://seamless.usgs.gov/">National
+Map Seamless Data Distribution System </A>. The data have been
+processed by <A HREF="http://srtm.csi.cgiar.org/">Dr. Andrew Jarvis
+of the CIAT Land Use project </A>, in collaboration with H.I. Reuter, A. Nelson and E. Guevara
+to fill in data voids and produce a seamless mosaic.<p>
+This is version 4.1 of the CSI-SRTM data with improved hole-filling algorithms which
+make use of ancilliary data sources where they are available. <p>
+
+See the full documentation at CGIAR-CSI <A
+HREF="http://srtm.csi.cgiar.org/">here. </A> The data are available here
+for download or  visualisation as Google Earth overlays using a locally- or
+globally-specific legend. The original 5 degree tiles are also sub-tiled for those
+users requiring easier to manage grids for smaller areas. The  visualisation, subtiling and Google Earth
+KML interface were developed by <A HREF="http://www.ambiotek.com/stableurl/mulliganacad">Dr
+Mark Mulligan of Kings College London </A>. The  actual data are
+accessed from the  mirror servers at Kings College London.
+The data are available in zipped ARCASCII and zipped GEOTIFF
+formats, in the geographic coordinate system, WGS84 datum. Each tile has an
+associated MASK file that indicates the areas in which data holes
+have been filled.</P>
+
+<P><B>To use simply </B><I>Fly To</I><B> your location and click
+the nearest waypoint. </B>You will then see a balloon which allows
+you to preview or download the five degree tiles of data. Previewing the data will
+open a new network link and a series of &gt;100km sub-tiles which display
+the data as a ground overlay. The data can be displayed with a
+colour classification derived from the local five degree tile (a
+local legend) or one which is consistent between five degree tiles
+(a global legend). Use the global legend if comparing across five
+degree tiles and the local legend if working within a single five
+degree tile (to give the most detailed visualisation). You can also
+download the data for the sub-tiles if these are easier for you
+to work with than the larger five degree tiles.  These sub-tile data
+are available as zipped ARCASCII only.
+<P>
+This is version 4.1 of this interface. There is a frequently asked questions (FAQ) document <A HREF="http://www.ambiotek.com/topoview/faq.doc"> here.</A>
+
+<P>
+DISTRIBUTION</BR>
+
+Users are prohibited from any commercial, non-free resale, or redistribution without explicit written permission from CIAT. Users should acknowledge CIAT as the source used in the creation of any reports, publications, new data sets, derived products, or services resulting from the use of this data set. CIAT also request reprints of any publications and notification of any redistributing efforts.</BR>
+
+NO WARRANTY OR LIABILITY</BR>
+
+CIAT and King's College London provides these data without any warranty of any kind whatsoever, either express or implied, including warranties of merchantability and fitness for a particular purpose. CIAT and King's College London shall not be liable for incidental, consequential, or special damages arising out of the use of any data downloaded.</BR>
+
+ACKNOWLEDGMENT AND CITATION</BR>
+
+We kindly ask any users to cite this data in any published material produced using this data. Citations should be made as follows:</BR>
+
+Please use the citation : Void-filled seamless SRTM data V1, 2004, International Centre for Tropical Agriculture (CIAT), available from the CGIAR-CSI SRTM 90m Database: http://srtm.csi.cgiar.org  and http://www.ambiotek.com/topoview</BR>]]></description>
+	<NetworkLink>
+		<name>elevation</name>
+		<Style>
+			<ListStyle>
+				<listItemType>check</listItemType>
+				<bgColor>00ffffff</bgColor>
+				<maxSnippetLines>2</maxSnippetLines>
+			</ListStyle>
+		</Style>
+		<Url>
+			<href>http://srtm.geog.kcl.ac.uk/portal/srtm41/elevation.kmz</href>
+			<refreshInterval>24000</refreshInterval>
+		</Url>
+	</NetworkLink>
+	<ScreenOverlay id="logo1">
+		<name>logo</name>
+		<Icon>
+			<href>http://www.ambiotek.com/topoview/csi_logo.jpg</href>
+		</Icon>
+		<overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+		<screenXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+		<rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		<size x="0" y="0" xunits="pixels" yunits="pixels"/>
+	</ScreenOverlay>
+	<ScreenOverlay id="logo2">
+		<name>logo2</name>
+		<Icon>
+			<href>http://www.ambiotek.com/topoview/kcllogo.gif</href>
+		</Icon>
+		<overlayXY x="1" y="1" xunits="fraction" yunits="fraction"/>
+		<screenXY x="1" y="1" xunits="fraction" yunits="fraction"/>
+		<rotationXY x="0.5" y="0.5" xunits="fraction" yunits="fraction"/>
+		<size x="0" y="0" xunits="pixels" yunits="pixels"/>
+	</ScreenOverlay>
+</Document>
+</kml>

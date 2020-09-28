@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneticAlgoRithmSimpleExample", "GeneticAlgoRithmSimpleExample\GeneticAlgoRithmSimpleExample.csproj", "{D197C49E-7D68-4AE7-ADA3-A375F597734B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesTravelingProblem", "SalesTravelingProblem\SalesTravelingProblem.csproj", "{7CBB8E83-59BC-425E-BA67-C2DB96E34E71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D197C49E-7D68-4AE7-ADA3-A375F597734B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D197C49E-7D68-4AE7-ADA3-A375F597734B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D197C49E-7D68-4AE7-ADA3-A375F597734B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D197C49E-7D68-4AE7-ADA3-A375F597734B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBB8E83-59BC-425E-BA67-C2DB96E34E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBB8E83-59BC-425E-BA67-C2DB96E34E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBB8E83-59BC-425E-BA67-C2DB96E34E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBB8E83-59BC-425E-BA67-C2DB96E34E71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8ABFDFBA-6759-4D98-9855-4BCEEAD0AECC}
+	EndGlobalSection
+EndGlobal
